@@ -1,0 +1,97 @@
+<!-- Create a survey form with Fields; First Name, Last Name, Date of Birth, Country (dropdown), Gender (checkbox), Profession,
+email, and mobile number. All the input fields are necessary to submit the form. Create two buttons Submit and Reset. Reset will
+reset the form while clicking on submit, first, it will check all the fields and necessary validations and then a popup will appear
+displaying all the selected values with labels in front of it. On closing the popup, the form should reset all the values. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Survey Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <center><h2>Customer Survey Form</h2></center>
+        <form id="survey Form"></form>
+        <div>
+            <label for="firstName">First Name</label><br>
+                <input type="text" id="firstName" required placeholder="First Name"><br>
+        </div>
+
+        <div>
+        <label for="lastName">Last Name</label> <br>
+                <input type="text" id="lastName" required placeholder="Last Name"><br>
+        </div>
+        
+        <div>
+        <label for="dob">Date of Birth</label><br>
+            <input type="date" id="dob" required><br>
+        </div>
+
+        <div>
+        <label for="country">Country</label><br>
+                <select id="country" required>
+                    <option value="">Select Country</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="UK">UK</option>
+                </select><br>
+        </div>
+
+        <div class="gender">
+            <label>Gender</label>
+            <div>
+                <input type="checkbox"  id="male"> <p>Male</p>
+            </div>
+            <div>
+                <input type="checkbox"  id="male"> <p>Female</p>
+            </div>
+        </div>
+
+        <div>
+        <label for="profession">Profession</label><br>
+                <input type="text" id="profession" required placeholder="What is your profession?"><br>
+        </div>
+
+        <div>
+        <label for="email">Email</label><br>
+                <input type="email" id="email" required placeholder="Enter your email"><br>
+        </div>
+        
+        <div>
+        <label for="mobile">Mobile Number</label><br>
+                <input type="tel" id="mobile" required placeholder="Enter your Mobile Number"><br>
+        </div>
+        
+        <div>
+            <button type="button" onclick="submitForm()">Submit</button>
+            <button type="button" onclick="resetForm()">Reset</button>
+            
+        </div>
+        </form>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Survey Form Submission</h2>
+            <p><strong>First Name:</strong> <span id="popupFirstName"></span></p>
+            <p><strong>Last Name:</strong> <span id="popupLastName"></span></p>
+            <p><strong>Date of Birth:</strong> <span id="popupDOB"></span></p>
+            <p><strong>Country:</strong> <span id="popupCountry"></span></p>
+            <p><strong>Gender:</strong> <span id="popupGender"></span></p>
+            <p><strong>Profession:</strong> <span id="popupProfession"></span></p>
+            <p><strong>Email:</strong> <span id="popupEmail"></span></p>
+            <p><strong>Mobile Number:</strong> <span id="popupMobile"></span></p>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+
+</html>
